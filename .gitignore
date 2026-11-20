@@ -1,0 +1,52 @@
+# ==========================================
+# ARCHIVOS PERSONALES Y DE DOCUMENTACIÓN
+# ==========================================
+doc/
+
+# ==========================================
+# DEPENDENCIAS Y ENTORNO
+# ==========================================
+node_modules/
+.pnpm-store/
+.env
+.env.local
+.env.production
+.env.*.local
+
+# ==========================================
+# BASE DE DATOS (Prisma / SQLite)
+# ==========================================
+*.db
+*.db-journal
+prisma/dev.db
+
+# ==========================================
+# BUILD Y CACHE (Vite / React)
+# ==========================================
+dist/
+build/
+.vite/
+.cache/
+temp/
+
+# ==========================================
+# LOGS Y TESTING
+# ==========================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+coverage/
+.nyc_output/
+
+# ==========================================
+# SISTEMA OPERATIVO Y EDITORES (IDE)
+# ==========================================
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo

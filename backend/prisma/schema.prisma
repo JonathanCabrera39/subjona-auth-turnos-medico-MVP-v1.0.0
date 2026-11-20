@@ -1,0 +1,68 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+// ✅ OPCIÓN A: SQLite (Recomendado para desarrollo local estable y rápido)
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// ❌ OPCIÓN B: PostgreSQL (Descomenta esto y comenta la Opción A solo cuando uses Supabase)
+// datasource db {
+//   provider = "postgresql"
+//   url      = env("DATABASE_URL")
+// }
+
+model Usuario {
+  id        Int      @id @default(autoincrement())
+  nombre    String
+  nickname  String   @unique
+  email     String   @unique
+  password  String
+  rol       String   @default("usuario")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relaciones
+  turnos    Turno[]
+
+  @@map("usuarios")
+}
+
+model Servicio {
+  id        Int      @id @default(autoincrement())
+  nombre    String   @unique
+  duracion  Int      // en minutos
+  precio    Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relaciones
+  turnos    Turno[]
+
+  @@map("servicios")
+}
+
+model Turno {
+  id          Int       @id @default(autoincrement())
+  fecha       DateTime
+  hora        String    // formato "HH:MM"
+  estado      String    @default("pendiente") // pendiente, confirmado, cancelado, completado
+  notas       String?
+  motivoAdmin String?   // 👈 ¡ESTE CAMPO DEBE ESTAR AQUÍ!
+
+  usuarioId   Int
+  servicioId  Int
+  
+  // Relaciones (onDelete: Cascade borra los turnos si se borra el usuario/servicio)
+  usuario     Usuario   @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+  servicio    Servicio  @relation(fields: [servicioId], references: [id], onDelete: Cascade)
+  
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([fecha, hora])
+  @@index([usuarioId])
+  @@map("turnos")
+}
