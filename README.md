@@ -11,13 +11,23 @@
 
 ## 📸 Capturas de Pantalla
 
-| Panel de Administración | Calendario de Turnos |
+### Panel de Administración
+| Gestión General | Servicios |
 |---|---|
-| ![Admin](https://via.placeholder.com/600x400?text=Panel+Admin) | ![Calendario](https://via.placeholder.com/600x400?text=Calendario) |
+| ![Panel Admin](frontend/src/assets/Panel%20de%20Administración.png) | ![Panel servicios](frontend/src/assets/Panel%20de%20Administración%20servicios.png) |
 
-| Vista de Paciente | Gestión de Turnos |
+| Turnos | Vaciar Base |
 |---|---|
-| ![Paciente](https://via.placeholder.com/600x400?text=Vista+Paciente) | ![Gestión](https://via.placeholder.com/600x400?text=Gestión+de+Turnos) |
+| ![Panel turnos](frontend/src/assets/Gestión%20de%20Turnos.png) | ![Panel vaciar](frontend/src/assets/Panel%20de%20Administración%20vaciar.png) |
+
+### Vista de Paciente y Funcionalidades
+| Mis Turnos | Calendario |
+|---|---|
+| ![Vista Paciente](frontend/src/assets/Vista%20de%20Paciente.png) | ![Calendario](frontend/src/assets/Calendario%20de%20Turnos.png) |
+
+| Gestión de Servicios | Autenticación |
+|---|---|
+| ![Servicios](frontend/src/assets/Gestión%20de%20servicios.png) | ![Login](frontend/src/assets/sistema-login-cierre-seccion.png) |
 
 > 💡 Reemplazá las URLs de placeholder con capturas reales de tu proyecto (usá [Lightshot](https://app.prntscr.com/) o subilas a la carpeta `/assets`).
 
